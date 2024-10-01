@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conjugador de Verbos | Pasado Simple</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1><i class="fas fa-language"></i> Conjugador de Verbos</h1>
+            <div class="verb-box">
+                <input type="text" id="verbInput" placeholder="Escribe un verbo en inglés...">
+                <button onclick="conjugateVerb()">
+                    <span>Conjugar</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <div id="loadingSpinner" class="spinner" style="display: none;">
+                <i class="fas fa-circle-notch fa-spin"></i>
+            </div>
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+            <div class="result-box" id="resultBox">
+                <div class="tense-card present">
+                    <h3>Presente</h3>
+                    <p id="presentTense"></p>
+                </div>
+                <div class="arrow-animation">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="tense-card past">
+                    <h3>Pasado Simple</h3>
+                    <p id="pastTense"></p>
+                </div>
+            </div>
+            <div class="disclaimer">
+                <p><i class="fas fa-info-circle"></i> Aprende inglés de manera divertida.</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

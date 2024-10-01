@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #4a4a4a);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+h1 i {
+    margin-right: 10px;
+    color: #3498db;
+}
+
+.verb-box {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 2rem;
+}
+
+input {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+button {
+    padding: 15px 30px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(41, 128, 185, 0.4);
+}
+
+button i {
+    transition: transform 0.3s;
+}
+
+button:hover i {
+    transform: translateX(5px);
+}
+
+.spinner {
+    text-align: center;
+    margin: 1rem 0;
+    color: #3498db;
+    font-size: 2rem;
+}
+
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.result-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s;
+}
+
+.result-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tense-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    flex: 1;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.tense-card:hover {
+    transform: translateY(-5px);
+}
+
+.tense-card h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.tense-card p {
+    font-size: 1.4rem;
+    color: #3498db;
+    font-weight: 500;
+}
+
+.arrow-animation {
+    margin: 0 20px;
+    color: #3498db;
+    font-size: 1.5rem;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+.disclaimer {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: rgba(52, 152, 219, 0.1);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+}
+
+.disclaimer i {
+    color: #3498db;
+    margin-right: 5px;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .verb-box {
+        flex-direction: column;
+    }
+    
+    .result-box {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .arrow-animation {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+
+    .tense-card {
+        padding: 1rem;
+    }
+
+    .tense-card h3 {
+        font-size: 1rem;
+    }
+
+    .tense-card p {
+        font-size: 1.2rem;
+    }
+
+    button {
+        width: 100%;
+        justify-content: center;
+    }
+}
